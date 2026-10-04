@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>West London Walks - Friendly Dog Walking in W4, W6, W12 &amp; W14</title>
+<meta name="description" content="West London Walks - friendly, insured dog walking and daytime care across Chiswick, Hammersmith, Shepherd's Bush, Acton and Notting Hill. Small groups, GPS-tracked walks, photo updates every time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16241c;
+  --moss:#2c5a41;
+  --leaf:#5f9670;
+  --cream:#fdfaf4;
+  --sand:#f4ecdd;
+  --sand-deep:#e9ddc7;
+  --amber:#d4791b;
+  --amber-soft:#f6d9ae;
+  --line:rgba(22,36,28,.12);
+  --shadow:0 18px 40px -22px rgba(22,36,28,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;overflow-x:hidden;background:var(--cream);color:var(--ink);
+  font-family:"DM Sans",system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.65;
+  font-weight:400;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.1;margin:0}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:100%;max-width:1140px;margin:0 auto;padding:0 24px}
+.narrow{max-width:780px}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:60;background:rgba(253,250,244,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:20px;padding:14px 24px;max-width:1140px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-weight:700;font-size:1.18rem;letter-spacing:-.01em;text-decoration:none}
+.brand .paw{width:34px;height:34px;border-radius:50%;background:var(--moss);color:#fff;display:grid;place-items:center;font-size:17px;flex:none}
+.brand small{display:block;font-family:"DM Sans",sans-serif;font-weight:400;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--leaf)}
+.nav-links{display:flex;gap:26px;margin-left:auto;font-size:.94rem;font-weight:500}
+.nav-links a{text-decoration:none;padding-bottom:2px;border-bottom:1.5px solid transparent;transition:border-color .2s,color .2s}
+.nav-links a:hover{border-color:var(--amber);color:var(--moss)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;
+  font-family:"DM Sans",sans-serif;font-size:.95rem;font-weight:700;text-decoration:none;
+  padding:13px 24px;border-radius:999px;border:1.5px solid transparent;transition:transform .15s,box-shadow .2s,background .2s,color .2s;
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--moss);color:#fff;box-shadow:var(--shadow)}
+.btn-primary:hover{background:#234a35}
+.btn-amber{background:var(--amber);color:#fff;box-shadow:var(--shadow)}
+.btn-amber:hover{background:#bd6a13}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--moss);color:var(--moss)}
+.nav .btn{padding:11px 20px;font-size:.9rem}
+.burger{display:none;margin-left:auto;background:none;border:1.5px solid var(--line);border-radius:10px;padding:8px 11px;cursor:pointer;font-size:1.1rem;color:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 0}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);background:var(--amber-soft);padding:8px 16px;border-radius:999px;margin-bottom:22px}
+.hero h1{font-size:clamp(2rem,4.6vw,3.6rem);letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--moss);text-decoration:underline;text-decoration-color:var(--amber);text-decoration-thickness:5px;text-underline-offset:6px}
+.hero p.lede{font-size:1.1rem;color:#3c4a41;margin:22px 0 30px;max-width:34em}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero-shot{position:relative}
+.hero-shot img{border-radius:26px;aspect-ratio:4/5;object-fit:cover;width:100%;box-shadow:var(--shadow)}
+.hero-badge{
+  position:absolute;left:-18px;bottom:26px;background:var(--cream);border:1px solid var(--line);
+  border-radius:18px;padding:14px 18px;box-shadow:var(--shadow);max-width:230px;
+}
+.hero-badge b{display:block;font-family:"Fraunces",serif;font-size:1.35rem;color:var(--moss);line-height:1}
+.hero-badge span{font-size:.82rem;color:#4c5a51}
+
+/* ---------- trust strip ---------- */
+.trust{background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:60px}
+.trust-in{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:22px 24px;max-width:1140px;margin:0 auto;font-size:.88rem;font-weight:500}
+.trust-in div{display:flex;align-items:center;gap:9px}
+.trust-in span{color:var(--amber);font-size:1rem}
+
+/* ---------- sections ---------- */
+section{padding:84px 0}
+.sec-sand{background:var(--sand)}
+.sec-moss{background:var(--moss);color:#f2f5f1}
+.sec-moss h2,.sec-moss h3{color:#fff}
+.sec-head{max-width:660px;margin:0 auto 52px;text-align:center}
+.sec-head h2{font-size:clamp(1.8rem,3.4vw,2.6rem);letter-spacing:-.02em;margin-bottom:14px}
+.sec-head p{margin:0;color:#4c5a51;font-size:1.05rem}
+.sec-moss .sec-head p{color:#cfe0d5}
+
+/* why me */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:26px 22px}
+.card .ico{width:44px;height:44px;border-radius:13px;background:var(--amber-soft);color:var(--moss);display:grid;place-items:center;font-size:20px;margin-bottom:16px}
+.card h3{font-size:1.12rem;margin-bottom:9px}
+.card p{margin:0;font-size:.94rem;color:#4c5a51;line-height:1.6}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery figure{margin:0;position:relative;border-radius:18px;overflow:hidden;background:var(--sand-deep)}
+.gallery img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .5s ease}
+.gallery figure:hover img{transform:scale(1.05)}
+.gallery figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:26px 16px 12px;font-size:.82rem;font-weight:500;color:#fff;
+  background:linear-gradient(to top,rgba(15,30,20,.78),transparent)
+}
+.gallery .wide{grid-column:span 2}
+.gallery .wide img{aspect-ratio:2/1}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:52px;align-items:center}
+.about-shot img{border-radius:24px;aspect-ratio:4/5;object-fit:cover;box-shadow:var(--shadow)}
+.about-copy p{color:#4c5a51}
+.facts{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 22px}
+.facts li{display:flex;gap:10px;align-items:flex-start;font-size:.94rem;color:var(--ink)}
+.facts li b{font-family:"Fraunces",serif;color:var(--moss);font-size:1.6rem;line-height:1;flex:none}
+.dogtabs{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.dogtabs span{font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:var(--sand-deep);color:var(--moss);padding:7px 14px;border-radius:999px}
+
+/* prices */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+.price-card{background:var(--cream);border:1px solid var(--line);border-radius:22px;padding:28px 24px;display:flex;flex-direction:column}
+.price-card.pop{border:2px solid var(--moss);box-shadow:var(--shadow);position:relative}
+.price-card.pop:before{content:"Most booked";position:absolute;top:-13px;left:24px;background:var(--amber);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.price-card h3{font-size:1.3rem;margin-bottom:4px}
+.price-card .sub{font-size:.85rem;color:var(--leaf);font-weight:500;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
+.amount{font-family:"Fraunces",serif;font-size:2.5rem;font-weight:700;color:var(--moss);line-height:1}
+.amount small{font-size:.95rem;font-family:"DM Sans",sans-serif;font-weight:400;color:#4c5a51}
+.price-card ul{list-style:none;padding:0;margin:20px 0 24px;font-size:.94rem;color:#4c5a51;flex:1}
+.price-card ul li{padding-left:22px;position:relative;margin-bottom:9px}
+.price-card ul li:before{content:"✓";position:absolute;left:0;color:var(--leaf);font-weight:700}
+.extras{margin-top:26px;background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:8px 26px}
+.extras-row{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid var(--line);font-size:.96rem}
+.extras-row:last-child{border-bottom:0}
+.extras-row span:last-child{font-weight:700;color:var(--moss);white-space:nowrap}
+.bundles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px}
+.bundle{background:var(--moss);color:#eaf2ec;border-radius:18px;padding:22px 24px}
+.bundle b{display:block;font-family:"Fraunces",serif;font-size:1.5rem;color:#fff;line-height:1.1;margin-bottom:4px}
+.bundle span{font-size:.9rem;color:#cfe0d5}
+.bundle em{font-style:normal;display:block;margin-top:12px;font-weight:700;color:#ffdca8;font-size:.9rem}
+
+/* calendar */
+.cal-layout{display:grid;grid-template-columns:1.25fr .95fr;gap:34px;align-items:start}
+.cal-card{background:var(--cream);border-radius:24px;padding:26px;box-shadow:var(--shadow)}
+.cal-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.cal-top h3{font-size:1.3rem}
+.cal-nav{display:flex;gap:8px}
+.sec-moss .cal-card h3{color:var(--ink)}
+.sec-moss .slots p.hint{color:#cfe0d5}
+.cal-nav button{width:38px;height:38px;border-radius:11px;border:1.5px solid var(--line);background:#fff;cursor:pointer;font-size:1rem;color:var(--ink);transition:border-color .2s,color .2s}
+.cal-nav button:hover:not(:disabled){border-color:var(--moss);color:var(--moss)}
+.cal-nav button:disabled{opacity:.3;cursor:not-allowed}
+.cal-dow,.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal-dow div{text-align:center;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--leaf);padding-bottom:8px}
+.cal-day{
+  aspect-ratio:1/1;border-radius:12px;border:1.5px solid transparent;background:var(--sand);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  font-size:.94rem;font-weight:500;cursor:pointer;font-family:inherit;color:var(--ink);padding:2px;transition:transform .15s,background .2s,color .2s,border-color .2s;
+}
+.cal-day i{font-style:normal;font-size:.58rem;letter-spacing:.04em;text-transform:uppercase;font-weight:700}
+.cal-day.open:hover{border-color:var(--moss);transform:translateY(-2px)}
+.cal-day .dot{width:5px;height:5px;border-radius:50%;background:var(--leaf)}
+.cal-day .dot.full{background:#c96a5c}
+.cal-day.sel{background:var(--moss);color:#fff;border-color:var(--moss)}
+.cal-day.sel .dot{background:var(--amber-soft)}
+.cal-day.off{background:transparent;color:#b9beb8;cursor:not-allowed}
+.cal-day.off i{display:none}
+.cal-day.pad{background:transparent;cursor:default}
+.cal-key{display:flex;gap:20px;margin-top:18px;font-size:.8rem;color:#4c5a51;flex-wrap:wrap}
+.cal-key span{display:flex;align-items:center;gap:7px}
+.cal-key .dot{width:7px;height:7px;border-radius:50%;background:var(--leaf)}
+.cal-key .dot.full{background:#c96a5c}
+.slots h3{font-size:1.2rem;margin-bottom:6px}
+.slots p.hint{font-size:.9rem;color:#4c5a51;margin:0 0 16px}
+.slot-list{display:grid;gap:10px}
+.slot{
+  display:flex;justify-content:space-between;align-items:center;gap:14px;width:100%;text-align:left;
+  background:var(--cream);border:1.5px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;
+  font-family:inherit;font-size:.95rem;color:var(--ink);transition:border-color .2s,background .2s
+}
+.slot:hover{border-color:var(--moss)}
+.slot.on{background:var(--moss);border-color:var(--moss);color:#fff}
+.slot b{font-weight:700}
+.slot small{display:block;font-size:.82rem;color:#4c5a51}
+.slot.on small{color:#cfe0d5}
+.slot .tick{font-weight:700;color:var(--amber);opacity:0}
+.slot.on .tick{opacity:1}
+.picked{
+  margin-top:18px;background:var(--amber-soft);border-radius:16px;padding:16px 18px;font-size:.94rem;display:none
+}
+.picked.on{display:block}
+.picked b{color:var(--moss)}
+.picked button{margin-top:12px}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:52px;align-items:start}
+.lets-talk{font-size:clamp(1.7rem,3.2vw,2.4rem);margin-bottom:12px}
+.contact-big{font-family:"Fraunces",serif;font-size:1.9rem;font-weight:700;color:#fff;letter-spacing:-.01em;display:inline-block;margin:12px 0 6px;text-decoration:none}
+.contact-big:hover{color:var(--amber-soft)}
+.contact-label{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9dc0aa}
+.contact-lines{margin-top:26px;display:grid;gap:12px;font-size:.95rem;color:#d5e4da}
+.contact-lines div{display:flex;gap:11px;align-items:flex-start}
+.contact-lines span{color:var(--amber-soft)}
+form{background:var(--cream);border-radius:24px;padding:30px;box-shadow:var(--shadow)}
+.field{margin-bottom:17px}
+.field label{display:block;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--moss);margin-bottom:7px}
+.field input,.field select,.field textarea{
+  width:100%;font-family:inherit;font-size:.98rem;color:var(--ink);background:#fff;
+  border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;transition:border-color .2s,box-shadow .2s
+}
+.field textarea{resize:vertical;min-height:104px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--moss);box-shadow:0 0 0 4px rgba(95,150,112,.16)}
+.field.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field.two .field{margin-bottom:0}
+.err{display:none;font-size:.82rem;color:#b8452f;margin-top:6px;font-weight:500}
+.field.bad input,.field.bad select,.field.bad textarea{border-color:#d0735c}
+.field.bad .err{display:block}
+.form-note{font-size:.82rem;color:#6b7a70;margin:16px 0 0;line-height:1.55}
+.sent{display:none;text-align:center;padding:14px 0}
+.sent.on{display:block}
+.sent .tickmark{width:64px;height:64px;border-radius:50%;background:var(--moss);color:#fff;display:grid;place-items:center;font-size:30px;margin:0 auto 18px}
+.sent h3{font-size:1.5rem;margin-bottom:10px}
+.sent p{color:#4c5a51;margin:0 0 18px}
+form.done .form-body{display:none}
+
+/* footer */
+footer{background:var(--ink);color:#b6c2ba;padding:52px 0 40px;font-size:.9rem}
+.foot-top{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.12)}
+footer .brand{color:#fff}
+.foot-cols{display:flex;gap:52px;flex-wrap:wrap}
+.foot-cols h4{font-family:"DM Sans",sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#7d9186;margin:0 0 10px;font-weight:700}
+.foot-cols a{display:block;text-decoration:none;color:#d5e4da;margin-bottom:6px;font-size:.9rem}
+.foot-cols a:hover{color:var(--amber-soft)}
+.foot-bottom{padding-top:22px;font-size:.82rem;color:#8a9a90;line-height:1.7}
+.demo-note{margin-top:14px;background:rgba(255,255,255,.06);border-radius:12px;padding:12px 16px;font-size:.8rem;color:#9fb0a6}
+
+@media (max-width:960px){
+  .hero-grid,.about-grid,.contact-grid,.cal-layout{grid-template-columns:1fr;gap:38px}
+  .hero{padding-top:44px}
+  .hero-shot img{aspect-ratio:16/11}
+  .hero-badge{left:12px;bottom:12px}
+  .trust-in{grid-template-columns:1fr 1fr}
+  .cards,.price-grid{grid-template-columns:1fr 1fr}
+  .about-shot img{aspect-ratio:16/11}
+  .gallery{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .nav-links.open{display:flex;position:absolute;top:100%;left:0;right:0;background:var(--cream);flex-direction:column;gap:0;padding:8px 24px 18px;border-bottom:1px solid var(--line)}
+  .nav-links.open a{padding:13px 0;border-bottom:1px solid var(--line)}
+  .burger{display:block}
+  .nav .btn{margin-left:0}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .wrap{padding:0 18px}
+  section{padding:56px 0}
+  .cards,.price-grid,.gallery,.facts,.bundles{grid-template-columns:1fr}
+  .gallery .wide{grid-column:span 1}
+  .gallery .wide img{aspect-ratio:1/1}
+  .field.two{grid-template-columns:1fr}
+  form{padding:22px}
+  .cal-card{padding:18px}
+  .cal-day{font-size:.86rem}
+  .cal-day i{display:none}
+  .sec-head{margin-bottom:36px}
+  .hero h1{font-size:2rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top">
+      <span class="paw"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><ellipse cx="7" cy="8.2" rx="2.1" ry="2.8"/><ellipse cx="12" cy="6.6" rx="2.1" ry="3"/><ellipse cx="17" cy="8.2" rx="2.1" ry="2.8"/><ellipse cx="20.6" cy="13" rx="1.9" ry="2.4"/><ellipse cx="3.4" cy="13" rx="1.9" ry="2.4"/><path d="M12 12.2c-3.6 0-6.3 2.6-6.3 5.2 0 2 1.5 3.1 3.4 3.1 1.2 0 2-.5 2.9-.5s1.7.5 2.9.5c1.9 0 3.4-1.1 3.4-3.1 0-2.6-2.7-5.2-6.3-5.2z"/></svg></span>
+      <span>West London Walks<small>Dog walking &amp; day care</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navlinks">
+      <a href="#why">Why me</a>
+      <a href="#walks">Our walks</a>
+      <a href="#about">About Chris</a>
+      <a href="#prices">Prices</a>
+      <a href="#book">Calendar</a>
+    </div>
+    <a class="btn btn-primary" href="#contact">Contact me</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">🐾 Chiswick · Hammersmith · W12 · W14</span>
+      <h1>Happy dogs, muddy paws, and a walker who <em>genuinely cares</em>.</h1>
+      <p class="lede">I am Chris - a local dog walker covering West London on foot, in small groups, come rain or shine. Every walk is tracked, and you get photos of your dog having the time of their life before I am even back at the door.</p>
+      <div class="hero-cta">
+        <a class="btn btn-amber" href="#book">Check the calendar</a>
+        <a class="btn btn-ghost" href="#prices">See prices</a>
+      </div>
+    </div>
+    <div class="hero-shot">
+      <img src="https://images.pexels.com/photos/8434757/pexels-photo-8434757.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="A dog walker leading a dog along a leafy path in West London">
+      <div class="hero-badge">
+        <b>Max 4</b>
+        <span>dogs per group walk - so every dog gets proper attention</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust">
+    <div class="trust-in">
+      <div><span>✓</span> DBS checked (enhanced)</div>
+      <div><span>✓</span> Fully insured &amp; canine first aid</div>
+      <div><span>✓</span> Photo update every walk</div>
+      <div><span>✓</span> Free meet &amp; greet first</div>
+    </div>
+  </div>
+</header>
+
+<!-- WHY -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Why dog owners pick me</h2>
+      <p>Not a franchise, not a rota of strangers - one bloke, four dogs of his own, and a genuine reason to be out in the park every day.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="ico">🐕</div>
+        <h3>Small groups only</h3>
+        <p>Four dogs, maximum. Big pack walks look fun in photos and are chaos in real life - yours gets my eyes on them the whole time.</p>
+      </div>
+      <div class="card">
+        <div class="ico">📍</div>
+        <h3>Walked where you live</h3>
+        <p>Chiswick, Hammersmith, Shepherd's Bush, Acton, Notting Hill and the parks in between - Riverside, Ravenscourt, Wormwood Scrubs, Holland Park.</p>
+      </div>
+      <div class="card">
+        <div class="ico">📸</div>
+        <h3>Photos, every time</h3>
+        <p>A GPS-tracked map of the route plus a handful of photos, sent while the walk is still happening. No wondering, no "did he turn up?".</p>
+      </div>
+      <div class="card">
+        <div class="ico">🏡</div>
+        <h3>Same face, every day</h3>
+        <p>I do the meet and greet, I do the walks, and if your dog is nervous or a bit of a handful, I am the one who learns their quirks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="walks" class="sec-sand">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Out on our walks</h2>
+      <p>Long sniffs, wet noses, and the odd heroic roll in something unspeakable. A normal week in West London.</p>
+    </div>
+    <div class="gallery">
+      <figure class="wide"><img src="https://images.pexels.com/photos/28795606/pexels-photo-28795606/free-photo-of-dog-walkers-enjoy-a-sunny-outdoor-stroll.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Two dog walkers with a group of dogs on a sunny path"><figcaption>Group walk, Riverside Park</figcaption></figure>
+      <figure><img src="https://images.pexels.com/photos/16961398/pexels-photo-16961398.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Dogs walking through an autumn park"><figcaption>Autumn sniffs under the trees</figcaption></figure>
+      <figure><img src="https://images.pexels.com/photos/5255595/pexels-photo-5255595.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A walker with a dog beside London park railings"><figcaption>Mornings along the railings</figcaption></figure>
+      <figure><img src="https://images.pexels.com/photos/19175821/pexels-photo-19175821/free-photo-of-man-walking-five-dogs-on-leashes.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A walker leading several dogs on leads"><figcaption>Five leads, zero tangles (usually)</figcaption></figure>
+      <figure><img src="https://images.pexels.com/photos/15940444/pexels-photo-15940444/free-photo-of-a-woman-walking-a-dog-on-the-street.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A woman walking her dog along a London street"><figcaption>Home-time, straight past the door</figcaption></figure>
+      <figure><img src="https://images.pexels.com/photos/22805594/pexels-photo-22805594/free-photo-of-man-walking-dogs-in-countryside.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A walker with a collie on a countryside path"><figcaption>Weekend leg-stretch, out of town</figcaption></figure>
+      <figure><img src="https://images.pexels.com/photos/8434594/pexels-photo-8434594.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A man walking a dog on a wide park path"><figcaption>Midday loop, every day</figcaption></figure>
+      <figure><img src="https://images.pexels.com/photos/18246341/pexels-photo-18246341/free-photo-of-closeup-of-cocker-spaniel-dog.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Close-up of a black cocker spaniel"><figcaption>Reggie, a regular</figcaption></figure>
+      <figure><img src="https://images.pexels.com/photos/1001976/pexels-photo-1001976.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A golden retriever sitting on grass"><figcaption>Waiting for the lead</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-shot">
+      <img src="https://images.pexels.com/photos/19175821/pexels-photo-19175821/free-photo-of-man-walking-five-dogs-on-leashes.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A man walking a group of dogs on leads">
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow">About me</span>
+      <h2 style="font-size:clamp(1.8rem,3.4vw,2.5rem);letter-spacing:-.02em">Hello - I am Chris, and I am completely dog-mad.</h2>
+      <p style="margin-top:20px">I am a London man, born and raised here, married, and living with four dogs of my own. That is not a marketing line - it is the reason this business exists. Once you have four sets of paws in the house, you learn fast that dogs do not need grand gestures. They need routine, a proper walk, and someone who actually notices when they are not quite themselves.</p>
+      <p>So that is what I do. I walk dogs across West London the way I walk my own - the long way round, in small groups, at the pace that suits the dog rather than the clock. Nervous rescues, elderly dogs who prefer a gentle wander, and young ones with far too much energy are all very welcome; they just get different walks.</p>
+      <p>If I am late, you will hear from me before you notice. If your dog has a bad day, you will hear about that too.</p>
+      <ul class="facts">
+        <li><b>4</b><span>dogs of my own at home - and counting, apparently</span></li>
+        <li><b>7</b><span>years walking dogs in West London</span></li>
+        <li><b>12</b><span>regular dogs on the books right now</span></li>
+        <li><b>0</b><span>walks cut short because of a bit of rain</span></li>
+      </ul>
+      <div class="dogtabs">
+        <span>Nervous rescues</span>
+        <span>Puppies</span>
+        <span>Elderly dogs</span>
+        <span>Strong pullers</span>
+        <span>Reactive dogs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section id="prices" class="sec-sand">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Walks &amp; prices</h2>
+      <p>Straightforward prices, no joining fee, and no charge at all for the first meet and greet. Blocks are paid up front and the walks never expire.</p>
+    </div>
+
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>Solo stroll</h3>
+        <div class="sub">30 minutes</div>
+        <div class="amount">£14<small> / walk</small></div>
+        <ul>
+          <li>Your dog on their own</li>
+          <li>Ideal for puppies, older dogs or shy ones</li>
+          <li>GPS map and photos sent to you</li>
+          <li>Fresh water and a towel-down afterwards</li>
+        </ul>
+        <button class="btn btn-ghost pick" data-service="Solo stroll (30 min)">Ask about this</button>
+      </div>
+
+      <div class="price-card pop">
+        <h3>Group walk</h3>
+        <div class="sub">60 minutes</div>
+        <div class="amount">£17<small> / walk</small></div>
+        <ul>
+          <li>Maximum of four dogs per walk</li>
+          <li>Matched by size, energy and temperament</li>
+          <li>Collected and dropped home again</li>
+          <li>Paws cleaned before I hand them back</li>
+        </ul>
+        <button class="btn btn-amber pick" data-service="Group walk (60 min)">Ask about this</button>
+      </div>
+
+      <div class="price-card">
+        <h3>Day care</h3>
+        <div class="sub">Half or full day</div>
+        <div class="amount">£26<small> / half day</small></div>
+        <ul>
+          <li>Half day (4 hours) - £26</li>
+          <li>Full day (up to 8 hours) - £40</li>
+          <li>Two walks plus company in between</li>
+          <li>Food, naps and cuddles included</li>
+        </ul>
+        <button class="btn btn-ghost pick" data-service="Day care">Ask about this</button>
+      </div>
+    </div>
+
+    <div class="extras">
+      <div class="extras-row"><span>Puppy visit - 30 minutes of play, garden and a toilet stop</span><span>£13</span></div>
+      <div class="extras-row"><span>Home visit - 20 minutes of feeding and company</span><span>£11</span></div>
+      <div class="extras-row"><span>Extra dog from the same home</span><span>+ £5</span></div>
+      <div class="extras-row"><span>Weekends and bank holidays</span><span>+ £3</span></div>
+      <div class="extras-row"><span>Last minute (under 12 hours' notice)</span><span>+ £3</span></div>
+      <div class="extras-row"><span>Free cancellation up to 12 hours before the walk</span><span>£0</span></div>
+    </div>
+
+    <div class="bundles">
+      <div class="bundle">
+        <b>10-walk bundle</b>
+        <span>£150 instead of £170 - works out at £15 a walk</span>
+        <em>Saves you £20</em>
+      </div>
+      <div class="bundle">
+        <b>20-walk bundle</b>
+        <span>£285 instead of £340 - works out at £14.25 a walk</span>
+        <em>Saves you £55</em>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDAR -->
+<section id="book" class="sec-moss">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Pick a day, pick a time</h2>
+      <p>Have a look at the diary and choose a slot that suits you. Nothing is confirmed until I reply - this is me asking you what works, not a robot booking you in.</p>
+    </div>
+
+    <div class="cal-layout">
+      <div class="cal-card">
+        <div class="cal-top">
+          <h3 id="calLabel">Month</h3>
+          <div class="cal-nav">
+            <button id="calPrev" aria-label="Previous month">‹</button>
+            <button id="calNext" aria-label="Next month">›</button>
+          </div>
+        </div>
+        <div class="cal-dow" aria-hidden="true">
+          <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+        <div class="cal-key">
+          <span><i class="dot"></i> Spaces left</span>
+          <span><i class="dot full"></i> Fully booked</span>
+          <span>Sun - closed</span>
+        </div>
+      </div>
+
+      <div class="slots">
+        <h3 id="slotHeading">Choose a day first</h3>
+        <p class="hint" id="slotHint">Tap any green day on the calendar and I will show you the times I have free.</p>
+        <div class="slot-list" id="slotList"></div>
+        <div class="picked" id="picked">
+          <div>Great - I will pencil you in for <b id="pickedText"></b>.</div>
+          <button class="btn btn-amber" id="pickedGo">Finish my request →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="sec-moss">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="contact-label">Contact me</span>
+      <h2 class="lets-talk">Let's talk!</h2>
+      <p style="color:#cfe0d5;margin:0">Tell me about your dog - the breed, the quirks, whether they are a saint or a menace on the lead. Or simply pick up the phone. Call, text or WhatsApp any time; there is a real person at this end, and it is usually me standing in a park.</p>
+      <a class="contact-big" href="tel:+447700900123">07700 900 123</a>
+      <div class="contact-label">Call · Text · WhatsApp</div>
+      <div class="contact-lines">
+        <div><span>✉</span> <span>hello@westlondonwalks.co.uk</span></div>
+        <div><span>📍</span> <span>Chiswick, Hammersmith, Shepherd's Bush, Acton, Notting Hill and Ealing</span></div>
+        <div><span>🕗</span> <span>Walks from 7.30am, last walk home by 7pm. Weekend walks on request.</span></div>
+      </div>
+    </div>
+
+    <form id="enquiry" novalidate>
+      <div class="form-body">
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Chris Farrell">
+          <div class="err">Please tell me your name.</div>
+        </div>
+        <div class="field two">
+          <div class="field sub">
+            <label for="f-phone">Phone</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="07700 900 123">
+            <div class="err">Please add a phone number.</div>
+          </div>
+          <div class="field sub">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+            <div class="err">Please check that email address.</div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-dog">Your dog's name and breed</label>
+          <input id="f-dog" name="dog" type="text" placeholder="Bramble, a very stubborn beagle">
+          <div class="err">Please introduce me to your dog.</div>
+        </div>
+        <div class="field">
+          <label for="f-service">What do you need?</label>
+          <select id="f-service" name="service">
+            <option value="">Please choose…</option>
+            <option>Solo stroll (30 min)</option>
+            <option>Group walk (60 min)</option>
+            <option>Puppy visit (30 min)</option>
+            <option>Home visit (20 min)</option>
+            <option>Day care - half day</option>
+            <option>Day care - full day</option>
+            <option>Not sure yet - let's have a chat</option>
+          </select>
+          <div class="err">Please choose what you need.</div>
+        </div>
+        <div class="field">
+          <label for="f-when">Preferred day and time</label>
+          <input id="f-when" name="when" type="text" placeholder="Pick a slot on the calendar above, or type it here">
+        </div>
+        <div class="field">
+          <label for="f-message">Anything else I should know?</label>
+          <textarea id="f-message" name="message" placeholder="How they are on the lead, other dogs, any medication, and where you keep the spare key."></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Send enquiry</button>
+        <p class="form-note">I answer everything myself, usually within a couple of hours. No mailing list, no spam, ever.</p>
+      </div>
+
+      <div class="sent" id="sent">
+        <div class="tickmark">✓</div>
+        <h3>That is with me - thank you!</h3>
+        <p id="sentDetail">I will come back to you shortly to confirm the walk.</p>
+        <button class="btn btn-ghost" type="button" id="sentReset">Send another enquiry</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div style="max-width:320px">
+        <a class="brand" href="#top"><span class="paw"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><ellipse cx="7" cy="8.2" rx="2.1" ry="2.8"/><ellipse cx="12" cy="6.6" rx="2.1" ry="3"/><ellipse cx="17" cy="8.2" rx="2.1" ry="2.8"/><ellipse cx="20.6" cy="13" rx="1.9" ry="2.4"/><ellipse cx="3.4" cy="13" rx="1.9" ry="2.4"/><path d="M12 12.2c-3.6 0-6.3 2.6-6.3 5.2 0 2 1.5 3.1 3.4 3.1 1.2 0 2-.5 2.9-.5s1.7.5 2.9.5c1.9 0 3.4-1.1 3.4-3.1 0-2.6-2.7-5.2-6.3-5.2z"/></svg></span><span>West London Walks<small>Dog walking &amp; day care</small></span></a>
+        <p style="margin-top:14px">Small-group dog walking and day care across West London. One walker, four dogs of his own, and a proper walk every time.</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h4>Explore</h4>
+          <a href="#why">Why me</a>
+          <a href="#walks">Our walks</a>
+          <a href="#about">About Chris</a>
+          <a href="#prices">Prices</a>
+          <a href="#book">Calendar</a>
+        </div>
+        <div>
+          <h4>Get in touch</h4>
+          <a href="tel:+447700900123">07700 900 123</a>
+          <a href="mailto:hello@westlondonwalks.co.uk">hello@westlondonwalks.co.uk</a>
+          <a href="#contact">Send a message</a>
+        </div>
+        <div>
+          <h4>Covering</h4>
+          <a href="#book">Chiswick &amp; W4</a>
+          <a href="#book">Hammersmith &amp; W6</a>
+          <a href="#book">Shepherd's Bush &amp; W12</a>
+          <a href="#book">Acton, Ealing &amp; W14</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      &copy; <span id="year">2026</span> West London Walks. Insured, DBS checked and canine first aid trained.
+      <div class="demo-note"><strong>Demonstration page.</strong> West London Walks is an invented business used to show what the finished site could look like. The prices, phone number, dog names, years of experience and figure counts are examples, not real details. The enquiry form checks your details but does not send anywhere yet. Photography from Pexels - stock images, not the client's own photos.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* ---------- mobile nav ---------- */
+  var burger = document.getElementById("burger"), links = document.getElementById("navlinks");
+  burger.addEventListener("click", function(){
+    var open = links.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  links.addEventListener("click", function(e){
+    if(e.target.tagName === "A"){ links.classList.remove("open"); burger.setAttribute("aria-expanded","false"); }
+  });
+
+  /* ---------- calendar ---------- */
+  var SLOTS = [
+    {label:"Early", time:"7.30am - 9am", note:"Before work - the most popular slot"},
+    {label:"Midday", time:"11.30am - 1pm", note:"The long one, usually the park"},
+    {label:"Afternoon", time:"2.30pm - 4pm", note:"Gentle pace, good for older dogs"},
+    {label:"Evening", time:"5.30pm - 7pm", note:"Last walk home before dark"}
+  ];
+  var today = new Date(); today.setHours(0,0,0,0);
+  var maxDate = new Date(today); maxDate.setDate(maxDate.getDate() + 62);
+  var view = new Date(today.getFullYear(), today.getMonth(), 1);
+  var selectedDay = null, selectedSlot = null;
+
+  // a couple of days look fully booked, so the diary reads like a real one
+  var booked = {};
+  [2, 5, 11].forEach(function(offset){
+    var d = new Date(today); d.setDate(d.getDate() + offset);
+    booked[d.toDateString()] = true;
+  });
+
+  var grid = document.getElementById("calGrid"), label = document.getElementById("calLabel");
+  var prev = document.getElementById("calPrev"), next = document.getElementById("calNext");
+  var slotHeading = document.getElementById("slotHeading"), slotHint = document.getElementById("slotHint");
+  var slotList = document.getElementById("slotList"), picked = document.getElementById("picked");
+  var pickedText = document.getElementById("pickedText");
+  var M = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  var D = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
+  function isBooked(d){ return !!booked[d.toDateString()]; }
+
+  function render(){
+    label.textContent = M[view.getMonth()] + " " + view.getFullYear();
+    grid.innerHTML = "";
+    var first = new Date(view.getFullYear(), view.getMonth(), 1);
+    var lead = (first.getDay() + 6) % 7; // Monday-first
+    for(var i=0;i<lead;i++){
+      var pad = document.createElement("div"); pad.className = "cal-day pad"; grid.appendChild(pad);
+    }
+    var days = new Date(view.getFullYear(), view.getMonth()+1, 0).getDate();
+    for(var d=1; d<=days; d++){
+      var date = new Date(view.getFullYear(), view.getMonth(), d);
+      var cell = document.createElement("button");
+      cell.type = "button";
+      cell.className = "cal-day";
+      cell.setAttribute("data-date", date.toISOString());
+      var num = document.createElement("span"); num.textContent = d;
+      cell.appendChild(num);
+
+      var past = date < today, sunday = date.getDay() === 0, tooFar = date > maxDate;
+      if(past || sunday || tooFar){
+        cell.classList.add("off");
+        var note = document.createElement("i");
+        note.textContent = sunday ? "closed" : (past ? "past" : "");
+        if(note.textContent) cell.appendChild(note);
+        cell.disabled = true;
+      } else if(isBooked(date)){
+        cell.classList.add("open");
+        var b = document.createElement("i"); b.textContent = "full";
+        cell.appendChild(b);
+        var dot = document.createElement("span"); dot.className = "dot full"; cell.appendChild(dot);
+        cell.disabled = true;
+      } else {
+        cell.classList.add("open");
+        var dot2 = document.createElement("span"); dot2.className = "dot"; cell.appendChild(dot2);
+        cell.addEventListener("click", function(){ choose(this); });
+      }
+      if(selectedDay && date.toDateString() === selectedDay.toDateString()) cell.classList.add("sel");
+      grid.appendChild(cell);
+    }
+    prev.disabled = (view.getFullYear() === today.getFullYear() && view.getMonth() === today.getMonth());
+    var lastAllowed = new Date(maxDate.getFullYear(), maxDate.getMonth(), 1);
+    next.disabled = view >= lastAllowed;
+  }
+
+  function pretty(d){
+    return D[d.getDay()] + " " + d.getDate() + " " + M[d.getMonth()];
+  }
+
+  function choose(cell){
+    selectedDay = new Date(cell.getAttribute("data-date"));
+    selectedSlot = null;
+    picked.classList.remove("on");
+    render();
+    slotHeading.textContent = "Free on " + pretty(selectedDay);
+    slotHint.textContent = isBooked(selectedDay)
+      ? "That day is full - try another."
+      : "Pick the time that suits you best.";
+    slotList.innerHTML = "";
+    SLOTS.forEach(function(s, i){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "slot";
+      b.innerHTML = '<span><b>' + s.label + " · " + s.time + "</b><small>" + s.note + "</small></span><span class=\"tick\">✓</span>";
+      b.addEventListener("click", function(){
+        selectedSlot = s;
+        [].forEach.call(slotList.children, function(c){ c.classList.remove("on"); });
+        b.classList.add("on");
+        pickedText.textContent = pretty(selectedDay) + ", " + s.label.toLowerCase() + " (" + s.time + ")";
+        picked.classList.add("on");
+        document.getElementById("f-when").value = pretty(selectedDay) + " - " + s.label + ", " + s.time;
+      });
+      slotList.appendChild(b);
+    });
+  }
+
+  prev.addEventListener("click", function(){
+    view = new Date(view.getFullYear(), view.getMonth()-1, 1); render();
+  });
+  next.addEventListener("click", function(){
+    view = new Date(view.getFullYear(), view.getMonth()+1, 1); render();
+  });
+
+  document.getElementById("pickedGo").addEventListener("click", function(){
+    document.getElementById("f-service").focus();
+    document.getElementById("contact").scrollIntoView({behavior: reduce ? "auto" : "smooth", block:"start"});
+  });
+
+  /* ---------- price cards prefill the form ---------- */
+  [].forEach.call(document.querySelectorAll(".pick"), function(btn){
+    btn.addEventListener("click", function(){
+      var sel = document.getElementById("f-service");
+      sel.value = btn.getAttribute("data-service");
+      sel.closest(".field").classList.remove("bad");
+      document.getElementById("contact").scrollIntoView({behavior: reduce ? "auto" : "smooth", block:"start"});
+    });
+  });
+
+  /* ---------- form ---------- */
+  var form = document.getElementById("enquiry"), sent = document.getElementById("sent");
+  function fieldOf(el){ return el.closest(".field"); }
+  function fail(el, on){ var f = fieldOf(el); if(on){ f.classList.add("bad"); } else { f.classList.remove("bad"); } }
+
+  ["f-name","f-phone","f-email","f-dog","f-service"].forEach(function(id){
+    var el = document.getElementById(id);
+    el.addEventListener("input", function(){
+      if(el.value.trim()) fail(el, false);
+    });
+    el.addEventListener("change", function(){
+      if(el.value.trim()) fail(el, false);
+    });
+  });
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var name = document.getElementById("f-name"),
+        phone = document.getElementById("f-phone"),
+        email = document.getElementById("f-email"),
+        dog = document.getElementById("f-dog"),
+        service = document.getElementById("f-service");
+    var bad = [];
+    if(!name.value.trim()) bad.push(name);
+    if(!phone.value.trim()) bad.push(phone);
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) bad.push(email);
+    if(!dog.value.trim()) bad.push(dog);
+    if(!service.value) bad.push(service);
+
+    ["f-name","f-phone","f-email","f-dog","f-service"].forEach(function(id){
+      fail(document.getElementById(id), bad.indexOf(document.getElementById(id)) > -1);
+    });
+
+    if(bad.length){
+      bad[0].focus();
+      return;
+    }
+
+    document.getElementById("sentDetail").textContent =
+      "Thanks " + name.value.trim().split(" ")[0] + " - I will come back to you about the " +
+      service.value.toLowerCase() + " for " + dog.value.trim() + " shortly.";
+    form.classList.add("done");
+    sent.classList.add("on");
+    form.scrollIntoView({behavior: reduce ? "auto" : "smooth", block:"center"});
+  });
+
+  document.getElementById("sentReset").addEventListener("click", function(){
+    form.reset();
+    ["f-name","f-phone","f-email","f-dog","f-service"].forEach(function(id){ fail(document.getElementById(id), false); });
+    form.classList.remove("done");
+    sent.classList.remove("on");
+    document.getElementById("f-name").focus();
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
